@@ -2,6 +2,9 @@ const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 
+let stage = "down";
+let counter = 0;
+
 function onResults(results) {
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
@@ -20,6 +23,26 @@ function onResults(results) {
                  {color: '#00FF00', lineWidth: 4});
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
+
+  if (results.poseLandmarks) {
+	  const shoulder = results.poseLandmarks[11];
+	  const elbow = results.poseLandmarks[13];
+	  const wrist = results.poseLandmarks[15];
+	  const v1 = {x: shoulder.x - elbow.x, y: shoulder.y - elbow.y, z: shoulder.z - elbow.z};
+	  const v2 = {x: wrist.x - elbow.x, y: wrist.y - elbow.y, z: wrist.z - elbow.z};
+
+	  const angle = Math.atan2(v1.y, v1.x) - Math.atan2(v2.y, v2.x);
+	  const degrees = Math.abs(angle * 180 / Math.PI);
+
+	  if (degrees > 160) {
+	    stage = "down"
+	  }
+	  else if (degrees < 30 && stage == "down") {
+		stage = "up";
+		counter++;
+		console.log(counter);
+	  }
+  }
   canvasCtx.restore();
 }
 
