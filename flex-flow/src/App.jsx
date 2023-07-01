@@ -49,12 +49,22 @@ const App = () => {
           <Input id="sets" label="🎯 Number of Sets" menuItems={setsItems} />
           <Input id="reps" label="🏋️ Number of Reps" menuItems={repItems} />
 	  <p>Reps <span id="count">0</span></p>
-	  <p>Sets <span id="sets_done">0</span></p>
           <button id="startBtn">😄 Start Exercise</button>
         </div>	
 	<video className="input_video"></video>
 
-	<canvas className="output_canvas" width="1600px" height="900px"></canvas>
+	<div className="poseApp">
+	    <canvas className="output_canvas" width="1280px" height="720px"></canvas>
+	    <div className="progressBar">
+	  	<h1>Progress</h1>
+	  	<div>
+	  		<h2>😊 Great job</h2>
+		</div>
+	  	<div>
+			<h2><span id="sets_done">0</span> sets done!</h2>
+		</div>
+	    </div>
+	</div>
 	<div className="landmark-grid-container"></div>
       </div>
       <script src="/src/main.js"></script>

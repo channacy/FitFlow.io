@@ -4,6 +4,7 @@ const canvasCtx = canvasElement.getContext('2d');
 
 let stage = "down";
 let counter = 0;
+let start = false;
 let sets = 0;
 
 function onResults(results) {
@@ -25,7 +26,7 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
 
-  if (results.poseLandmarks) {
+  if (results.poseLandmarks && start) {
 	  const shoulder = results.poseLandmarks[11];
 	  const elbow = results.poseLandmarks[13];
 	  const wrist = results.poseLandmarks[15];
@@ -75,5 +76,7 @@ const camera = new Camera(videoElement, {
   width: 1280,
   height: 720
 });
+
+const button = document.getElementById("startBtn");
 
 camera.start();
