@@ -4,6 +4,7 @@ const canvasCtx = canvasElement.getContext('2d');
 
 let stage = "down";
 let counter = 0;
+let sets = 0;
 
 function onResults(results) {
   canvasCtx.save();
@@ -33,14 +34,22 @@ function onResults(results) {
 
 	  const angle = Math.atan2(v1.y, v1.x) - Math.atan2(v2.y, v2.x);
 	  const degrees = Math.abs(angle * 180 / Math.PI);
-
-	  if (degrees > 160) {
+	  console.log(stage);
+	  if (degrees > 140) {
 	    stage = "down"
 	  }
-	  else if (degrees < 30 && stage == "down") {
+	  else if (degrees < 50 && stage == "down") {
 		stage = "up";
-		counter++;
-		console.log(counter);
+		++counter;
+		if (document.getElementById("reps").innerHTML == counter) {
+		   counter = 0;
+		   document.getElementById("sets_done").innerHTML = ++sets;
+		}
+		if (document.getElementById("sets").innerHTML == sets) {
+		   console.log("workout complete!");
+		}
+
+		document.getElementById("count").innerHTML = counter;
 	  }
   }
   canvasCtx.restore();

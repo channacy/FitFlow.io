@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Input from './components/Input';
+import Input from './components/Input'; 
 import './App.css';
 
 const App = () => {
@@ -44,10 +44,12 @@ const App = () => {
       <div>
         <h1 className="header">Fit-Flow</h1>
         <div className="inputContainer">
-          <Input label="⏳ Time" menuItems={timeItems} />
-          <Input label="🤸 Exercise" menuItems={exerciseItems} />
-          <Input label="🎯 Number of Sets" menuItems={setsItems} />
-          <Input label="🏋️ Number of Reps" menuItems={repItems} />
+          <Input id="time" label="⏳ Time" menuItems={timeItems} />
+          <Input id="exercise" label="🤸 Exercise" menuItems={exerciseItems} />
+          <Input id="sets" label="🎯 Number of Sets" menuItems={setsItems} />
+          <Input id="reps" label="🏋️ Number of Reps" menuItems={repItems} />
+	  <p>Reps <span id="count">0</span></p>
+	  <p>Sets <span id="sets_done">0</span></p>
           <button id="startBtn">😄 Start Exercise</button>
         </div>	
 	<video className="input_video"></video>

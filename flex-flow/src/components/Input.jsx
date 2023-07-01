@@ -3,7 +3,7 @@ import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import PropTypes from 'prop-types';
 
 const Input = (props) => {
-  const { label, menuItems = []} = props;
+  const { label, menuItems = [], id} = props;
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -18,7 +18,7 @@ const Input = (props) => {
         </InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
+          id={id}
           value={age}
           label={label}
           sx={{ color: 'white' }}
