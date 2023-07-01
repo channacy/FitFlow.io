@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-import { useState } from 'react'
-import Input from './components/Input';
-
-
-
-=======
 import { useState, useEffect } from 'react'
 import Input from './components/Input';
->>>>>>> 43ffac5d9227a3c71deaf551d7e9e4c445f87e3c
 import './App.css';
 
 const App = () => {
