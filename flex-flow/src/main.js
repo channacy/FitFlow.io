@@ -26,7 +26,7 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
 
-  if (results.poseLandmarks && start) {
+  if (results.poseLandmarks) {
 	  const shoulder = results.poseLandmarks[11];
 	  const elbow = results.poseLandmarks[13];
 	  const wrist = results.poseLandmarks[15];
