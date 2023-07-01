@@ -93,3 +93,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.output_canvas{
+  position: relative;
+  margin-top: 200px;
+  margin-right: 200px;
+}
