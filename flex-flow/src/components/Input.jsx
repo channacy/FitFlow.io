@@ -1,11 +1,8 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import React from 'react';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
-export default function Input() {
+const Input = (props) => {
+  const { label } = props;
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -14,14 +11,16 @@ export default function Input() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: '320px', backgroundColor: "#454447",  borderRadius: 3}}>
-        <InputLabel sx={{ color: 'white' }} id="demo-simple-select-helper-label">Age</InputLabel>
+      <FormControl sx={{ m: 1, width: '320px', backgroundColor: '#454447', borderRadius: 3 }}>
+        <InputLabel sx={{ color: 'white' }} id="demo-simple-select-helper-label">
+          {label}
+        </InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
           value={age}
-          label="Age"
-          sx={{ color: 'white' }} 
+          label={label}
+          sx={{ color: 'white' }}
           onChange={handleChange}
         >
           <MenuItem value="">
@@ -32,7 +31,8 @@ export default function Input() {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
-      
     </div>
   );
-}
+};
+
+export default Input;
