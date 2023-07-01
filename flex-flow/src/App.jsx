@@ -3,6 +3,28 @@ import Input from './components/Input';
 import './App.css';
 
 const App = () => {
+
+const timeItems = [
+    { value: 1, label: '1 Minute' },
+    { value: 10, label: 'Ten Minutes' },
+    { value: 20, label: 'Twenty Minutes' },
+    { value: 30, label: 'Thirty Minutes' },
+  ];
+  const exerciseItems = [
+    { value: "bicep curl", label: 'Bicep Curl' },
+  ];
+
+  const setsItems = [
+    { value: 2, label: '2' },
+  ];
+
+  const repItems = [
+    { value: 1, label: '1' },
+    { value: 5, label: '5' },
+    { value: 6, label: '6' },
+    { value: 7, label: '7' },
+  ];
+
   useEffect(() => {
     const script = document.createElement('script');
 
@@ -21,10 +43,10 @@ const App = () => {
       <div>
         <h1 className="header">Fit-Flow</h1>
         <div className="inputContainer">
-          <Input label="Time"/>
-          <Input label="Exercise"/>
-          <Input label="Number of Sets"/>
-          <Input label="Number of Reps"/>
+          <Input label="Time" menuItems={timeItems}/>
+          <Input label="Exercise" menuItems={exerciseItems}/>
+          <Input label="Number of Sets" menuItems={setsItems}/>
+          <Input label="Number of Reps" menuItems={repItems}/>
           <button id="startBtn">Start Exercise</button>
         </div>	
 	<video className="input_video"></video>
