@@ -3,8 +3,7 @@ import Input from './components/Input';
 import './App.css';
 
 const App = () => {
-
-const timeItems = [
+  const timeItems = [
     { value: 1, label: '1 Minute' },
     { value: 10, label: 'Ten Minutes' },
     { value: 20, label: 'Twenty Minutes' },
@@ -25,6 +24,8 @@ const timeItems = [
     { value: 7, label: '7' },
   ];
 
+
+
   useEffect(() => {
     const script = document.createElement('script');
 
@@ -43,14 +44,15 @@ const timeItems = [
       <div>
         <h1 className="header">Fit-Flow</h1>
         <div className="inputContainer">
-          <Input label="Time" menuItems={timeItems}/>
-          <Input label="Exercise" menuItems={exerciseItems}/>
-          <Input label="Number of Sets" menuItems={setsItems}/>
-          <Input label="Number of Reps" menuItems={repItems}/>
-          <button id="startBtn">Start Exercise</button>
+          <Input label="⏳ Time" menuItems={timeItems} />
+          <Input label="🤸 Exercise" menuItems={exerciseItems} />
+          <Input label="🎯 Number of Sets" menuItems={setsItems} />
+          <Input label="🏋️ Number of Reps" menuItems={repItems} />
+          <button id="startBtn">😄 Start Exercise</button>
         </div>	
 	<video className="input_video"></video>
-	<canvas className="output_canvas" width="1280px" height="720px"></canvas>
+
+	<canvas className="output_canvas" width="1600px" height="900px"></canvas>
 	<div className="landmark-grid-container"></div>
       </div>
       <script src="/src/main.js"></script>

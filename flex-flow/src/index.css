@@ -51,7 +51,7 @@ h1 {
   background-color: #36353A;
   left:0;
   right: 0;
-  position: fixed;
+  position: absolute;
   padding: 20px; 
   height: 80px;
   margin-top: 45px;
@@ -94,7 +94,7 @@ button:focus-visible {
   }
 }
 .output_canvas{
-  position: relative;
-  margin-top: 200px;
-  margin-right: 200px;
+  position: absolute;
+  top: 240px; /* Adjust the top position as needed */
+  left: 30px; /* Adjust the left position as needed */
 }
