@@ -114,4 +114,10 @@ button:focus-visible {
 	width: 70%;
 	margin: 8px;
 	border-radius: 6px;
+	color: black;
+}
+
+
+.progressBar > h2 {
+	color: black;
 }
